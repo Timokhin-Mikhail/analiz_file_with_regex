@@ -112,6 +112,7 @@ def extract_name_address_description(text: str) -> List[str]:
 def work_with_file(file_path: str) -> List[str]:
     image = Image.open(file_path)
     image = image.resize((977, 1265))
+    # далее указывается путь к исполняемому файлу тисеракта в системе Windows
     path_to_tesseract = r"D:\Program Files\tesseract\tesseract.exe"  # r"C:\Program Files\Tesseract-OCR\tesseract.exe"
     pytesseract.tesseract_cmd = path_to_tesseract
     text = pytesseract.image_to_string(image)
